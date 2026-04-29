@@ -27,6 +27,7 @@ function fetchWeatherAlerts(state) {
             displayAlerts(response)
             const errorContainer = document.getElementById("error-message");
             errorContainer.textContent = "";
+            errorContainer.classList.add("hidden"); 
         })
 
         .catch(errorObject => {
@@ -37,7 +38,7 @@ function fetchWeatherAlerts(state) {
             const errorContainer = document.getElementById("error-message");
 
             if (errorContainer) {
-                errorContainer.style.display = "block";
+                errorContainer.classList.remove("hidden");
                 errorContainer.innerHTML = "";
                 let errorMessage = document.createElement("p");
 
