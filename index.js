@@ -8,7 +8,7 @@ const searchButton = document.getElementById("fetch-alerts");
 const inputField = document.getElementById("state-input");
 
 searchButton.addEventListener('click', (e) => {
-    let state = inputField.value.toUpperCase();
+    let state = inputField.value;
     fetchWeatherAlerts(state);
     inputField.value = "";
 })
@@ -32,10 +32,9 @@ function fetchWeatherAlerts(state) {
         .catch(errorObject => {
 
             const alertDisplay = document.getElementById("alerts-display");
-            if (alertDisplay) {
-                alertDisplay.innerHTML = "";
-                const errorContainer = document.getElementById("error-message")
-            };
+            if (alertDisplay) alertDisplay.innerHTML = "";
+
+            const errorContainer = document.getElementById("error-message");
 
             if (errorContainer) {
                 errorContainer.style.display = "block";
