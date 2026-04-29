@@ -59,9 +59,8 @@ function displayAlerts(data) {
     alertDisplay.innerHTML = "";
 
     //Displaying the summary message:
-    const title = data.title;
     const alerts = data.features.length;
-    let summary = `"${title} : ${alerts}."`;
+    let summary = `Weather Alerts: ${alerts}`;
 
     let sumMessage = document.createElement("p");
     sumMessage.textContent = summary;
